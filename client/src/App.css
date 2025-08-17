@@ -1,0 +1,198 @@
+.App {
+  text-align: left;
+}
+
+.selected-location {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.selected-location p {
+  margin: 5px 0;
+  color: #e2e8f0;
+}
+
+.thresholds-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.thresholds-summary h3 {
+  margin-top: 0;
+  color: #e2e8f0;
+}
+
+.thresholds-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.thresholds-summary li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  color: #cbd5e1;
+}
+
+.thresholds-summary li:last-child {
+  border-bottom: none;
+}
+
+.data-info {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+.data-info h3 {
+  margin-top: 0;
+  color: #34d399;
+}
+
+.data-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.data-info li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  color: #cbd5e1;
+}
+
+.data-info li:last-child {
+  border-bottom: none;
+}
+
+.interpretation {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.interpretation h3 {
+  margin-top: 0;
+  color: #e2e8f0;
+}
+
+.interpretation p {
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.error {
+  margin-top: 15px;
+}
+
+.yearly-statistics {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #8b5cf6;
+}
+
+.yearly-statistics h3 {
+  margin-top: 0;
+  color: #a78bfa;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.stats-table th {
+  background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+  color: white;
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.stats-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+.stats-table tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.stats-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.stats-table .flight-days {
+  font-weight: 600;
+  color: #059669;
+}
+
+.stats-table th:first-child,
+.stats-table td:first-child {
+  padding-left: 16px;
+}
+
+.stats-table th:last-child,
+.stats-table td:last-child {
+  padding-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .threshold-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .stats-table {
+    font-size: 0.8rem;
+  }
+  
+  .stats-table th,
+  .stats-table td {
+    padding: 8px 6px;
+  }
+  
+  .stats-table th:first-child,
+  .stats-table td:first-child {
+    padding-left: 12px;
+  }
+  
+  .stats-table th:last-child,
+  .stats-table td:last-child {
+    padding-right: 12px;
+  }
+}
