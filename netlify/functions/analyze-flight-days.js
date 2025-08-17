@@ -120,8 +120,12 @@ exports.handler = async (event, context) => {
       }
       
       const precipitation = dailyData.precipitation_sum[i] || 0;
-      const windSpeed = dailyData.wind_speed_10m_mean[i] || 0;
-      const windGusts = dailyData.wind_gusts_10m_max[i] || 0;
+      // Convert wind speeds from km/h to m/s (divide by 3.6)
+      // Handle null values properly - null should become 0, then convert
+      const windSpeedKmh = dailyData.wind_speed_10m_mean[i];
+      const windGustsKmh = dailyData.wind_gusts_10m_max[i];
+      const windSpeed = (windSpeedKmh === null || windSpeedKmh === undefined) ? 0 : windSpeedKmh / 3.6;
+      const windGusts = (windGustsKmh === null || windGustsKmh === undefined) ? 0 : windGustsKmh / 3.6;
       
       dataByYear[year].push({
         precipitation,
