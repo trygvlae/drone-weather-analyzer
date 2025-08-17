@@ -2,8 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-// API base URL - uses environment variable in production, localhost in development
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+// API base URL - uses Netlify functions in production, localhost in development
+const API_BASE_URL = process.env.NODE_ENV === 'production' ? '/.netlify/functions' : 'http://localhost:5000/api';
 
 interface Location {
   lat: string;
@@ -76,7 +76,10 @@ const App: React.FC = () => {
 
   const searchLocations = async (query: string) => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/geocode/${encodeURIComponent(query)}`);
+      const url = process.env.NODE_ENV === 'production' 
+        ? `${API_BASE_URL}/geocode?place=${encodeURIComponent(query)}`
+        : `${API_BASE_URL}/geocode/${encodeURIComponent(query)}`;
+      const response = await axios.get(url);
       setLocationSuggestions(response.data);
       setShowSuggestions(true);
     } catch (error) {
@@ -107,7 +110,7 @@ const App: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/analyze-flight-days`, {
+      const response = await axios.post(`${API_BASE_URL}/analyze-flight-days`, {
         latitude: parseFloat(selectedLocation.lat),
         longitude: parseFloat(selectedLocation.lon),
         thresholds
